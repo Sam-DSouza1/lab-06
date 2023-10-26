@@ -6,6 +6,17 @@ def encode(password):
     return out
 
 
+def decode(encoded_password):
+    arr = []
+    decoded_password = ""
+    for i in password:
+        arr.append(int(i))
+    for j in arr:
+        j -= 3
+        decoded_password += str(j)
+    return decoded_password
+
+
 def main():
     password = input("Please input your 8-digit passcode")
     print(encode(password))
