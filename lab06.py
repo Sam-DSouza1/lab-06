@@ -14,12 +14,22 @@ def decode(encoded_password):
     for j in arr:
         j -= 3
         decoded_password += str(j)
-    return decoded_password
+    print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}")
+
 
 
 def main():
-    password = input("Please input your 8-digit passcode")
-    print(encode(password))
+    while(True):
+        print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit")
+        option = input("Please enter an option: ")
+        if option == "1":
+            password = input("Please input your password to encode")
+            print(encode(password))
+            print("Your password has been encoded and stored")
+        elif option == "2":
+            password = input("Please input your password to decode")
+        elif option == "3":
+            break
 
 
 main()
